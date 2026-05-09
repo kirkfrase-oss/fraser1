@@ -155,7 +155,7 @@ body::before {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 72px;
+  height: 84px;
 }
 .brand {
   display: inline-flex;
@@ -167,15 +167,15 @@ body::before {
 }
 .brand__logo {
   display: block;
-  width: 150px;
-  height: 48px;
-  background-image: url("project/assets/orca-logo.webp");
+  width: 180px;
+  height: 58px;
+  background-image: url("project/uploads/openart-gpt-image-2-edit-1_1778279987493_ca8642cf.jpg");
   background-size: contain;
   background-position: left center;
   background-repeat: no-repeat;
 }
 @media (min-width: 768px) {
-  .brand__logo { width: 180px; height: 52px; }
+  .brand__logo { width: 220px; height: 66px; }
 }
 .brand__mark {
   width: 22px; height: 22px;
@@ -1256,9 +1256,9 @@ body::before {
 }
 .foot__logo {
   display: block;
-  width: 130px;
-  height: 40px;
-  background-image: url("project/assets/orca-logo.webp");
+  width: 160px;
+  height: 50px;
+  background-image: url("project/uploads/openart-gpt-image-2-edit-1_1778279987493_ca8642cf.jpg");
   background-size: contain;
   background-position: left center;
   background-repeat: no-repeat;
@@ -1285,6 +1285,165 @@ image-slot {
   --slot-bg: #14141a;
   --slot-fg: #6f6a60;
   --slot-stripe: rgba(232,228,219,0.04);
+}
+
+/* =========================================================
+   Contact Form Section
+   ========================================================= */
+.contact-section {
+  background: var(--ink-900);
+  border-top: 1px solid var(--hairline);
+  padding-block: 96px;
+}
+@media (min-width: 768px) { .contact-section { padding-block: 140px; } }
+
+.contact-section .section__head { margin-bottom: 56px; }
+
+.contact-form {
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.contact-form__group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-form__group-title {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--bone-mute);
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.contact-form__row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+@media (min-width: 640px) {
+  .contact-form__row--2 { grid-template-columns: 1fr 1fr; }
+  .contact-form__row--3 { grid-template-columns: 1fr 1fr 1fr; }
+}
+
+.contact-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--bone-mute);
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  appearance: none;
+  background: var(--ink-850);
+  border: 1px solid var(--hairline-strong);
+  border-radius: 2px;
+  color: var(--bone);
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  padding: 13px 16px;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.contact-form input::placeholder,
+.contact-form textarea::placeholder { color: var(--bone-mute); }
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus { border-color: var(--bone-dim); }
+
+.contact-form select {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path fill='rgba(232,228,219,0.4)' d='M0 0h10L5 6z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+  cursor: pointer;
+}
+.contact-form select option { background: var(--ink-850); }
+
+.contact-form textarea { resize: vertical; min-height: 120px; line-height: 1.55; }
+
+.contact-form__submit {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 0;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--bone);
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgba(232,228,219,0.18);
+  cursor: pointer;
+  transition: border-color 0.3s, gap 0.3s;
+}
+.contact-form__submit:hover:not(:disabled) { border-color: var(--bone); gap: 28px; }
+.contact-form__submit:disabled { opacity: 0.5; cursor: not-allowed; }
+.contact-form__submit-arrow {
+  display: inline-flex;
+  width: 48px; height: 48px;
+  align-items: center; justify-content: center;
+  border: 1px solid rgba(232,228,219,0.28);
+  border-radius: 50%;
+  font-size: 16px;
+  transition: border-color 0.3s, background 0.3s, color 0.3s;
+}
+.contact-form__submit:hover:not(:disabled) .contact-form__submit-arrow {
+  border-color: var(--bone);
+  background: var(--bone);
+  color: var(--ink-950);
+}
+
+.contact-form__success {
+  text-align: center;
+  padding: 80px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+.contact-form__success-mark {
+  width: 56px; height: 56px;
+  border: 1px solid var(--hairline-strong);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px;
+  color: var(--bone-dim);
+  margin-bottom: 8px;
+}
+.contact-form__success h3 {
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0;
+  color: var(--bone);
+}
+.contact-form__success p {
+  font-size: 16px;
+  color: var(--bone-dim);
+  margin: 0;
+  max-width: 480px;
+  line-height: 1.55;
+}
+
+.contact-form__error {
+  font-size: 12px;
+  color: #ff8a80;
+  margin-top: 4px;
 }
   </style>
 
@@ -2046,7 +2205,7 @@ Object.assign(window, {
   <script type="text/babel">
 const { useState, useEffect, useRef } = React;
 
-const FORM_URL = "https://forms.office.com/r/your-form-id"; // ← replace with your Microsoft Form link
+const FORM_URL = "#apply";
 
 const TWEAK_DEFAULTS = {
   "headlineMode": "future",
@@ -2059,7 +2218,7 @@ const TWEAK_DEFAULTS = {
 function ArrowCTA({ large, children, href = FORM_URL }) {
   return (
     <a className={`arrow-cta ${large ? "arrow-cta--lg" : ""}`}
-       href={href} target="_blank" rel="noopener noreferrer">
+       href={href}>
       <span className="arrow-cta__label">{children}</span>
       <span className="arrow-cta__arrow" aria-hidden="true">→</span>
     </a>
@@ -2092,7 +2251,7 @@ function Nav() {
         <a href="#top" className="brand" aria-label="ORCA KITS — home">
           <span className="brand__logo" role="img" aria-label="ORCA KITS" />
         </a>
-        <a className="nav__cta" href={FORM_URL} target="_blank" rel="noopener noreferrer">
+        <a className="nav__cta" href="#apply">
           <span className="nav__cta-label">CONTACT US</span>
           <span className="arrow">→</span>
         </a>
@@ -2641,6 +2800,191 @@ function FinalCTA() {
   );
 }
 
+/* ── Contact Form ── */
+function ContactForm() {
+  const [status, setStatus] = React.useState('idle');
+  const [fieldErrors, setFieldErrors] = React.useState({});
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    setStatus('submitting');
+    setFieldErrors({});
+    try {
+      const res = await fetch('https://formspree.io/f/mzdojjnl', {
+        method: 'POST',
+        body: new FormData(e.target),
+        headers: { 'Accept': 'application/json' }
+      });
+      const json = await res.json();
+      if (res.ok) {
+        setStatus('success');
+      } else {
+        const errs = {};
+        (json.errors || []).forEach(err => { if (err.field) errs[err.field] = err.message; });
+        setFieldErrors(errs);
+        setStatus('error');
+      }
+    } catch {
+      setStatus('error');
+    }
+  }
+
+  if (status === 'success') {
+    return (
+      <div className="contact-form__success">
+        <div className="contact-form__success-mark">◇</div>
+        <h3>Thank you.</h3>
+        <p>We've received your details and will be in touch shortly.</p>
+      </div>
+    );
+  }
+
+  return (
+    <form className="contact-form" onSubmit={handleSubmit}>
+
+      <div className="contact-form__group">
+        <div className="contact-form__group-title">Contact Information</div>
+        <div className="contact-form__row contact-form__row--2">
+          <label>Full Name
+            <input name="full_name" type="text" placeholder="Full Name" required />
+          </label>
+          <label>Email Address
+            <input name="email" type="email" placeholder="Email Address" required />
+            {fieldErrors.email && <span className="contact-form__error">{fieldErrors.email}</span>}
+          </label>
+        </div>
+        <div className="contact-form__row contact-form__row--3">
+          <label>Phone
+            <input name="phone" type="tel" placeholder="Phone Number" required />
+          </label>
+          <label>City
+            <input name="city" type="text" placeholder="City" />
+          </label>
+          <label>Province / State
+            <input name="state_province" type="text" placeholder="Province / State" />
+          </label>
+        </div>
+        <div className="contact-form__row">
+          <label>Country
+            <input name="country" type="text" placeholder="Country" defaultValue="Canada" />
+          </label>
+        </div>
+      </div>
+
+      <div className="contact-form__group">
+        <div className="contact-form__group-title">About You</div>
+        <div className="contact-form__row contact-form__row--2">
+          <label>Who are you?
+            <select name="who_are_you" required>
+              <option value="">Select one</option>
+              <option>Homeowner / DIY</option>
+              <option>Builder / Contractor</option>
+              <option>Developer / Operator</option>
+              <option>Manufacturer / Supplier</option>
+              <option>Institution / Partner</option>
+            </select>
+          </label>
+          <label>How do you want to participate?
+            <select name="participation_type" required>
+              <option value="">Select one</option>
+              <option>Build a single project using ORCA kits</option>
+              <option>Deploy multiple projects using ORCA systems</option>
+              <option>Join the ORCA builder/manufacturing network</option>
+              <option>Strategic partnership or investment opportunity</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+      <div className="contact-form__group">
+        <div className="contact-form__group-title">Your Project</div>
+        <div className="contact-form__row contact-form__row--2">
+          <label>Problem you're solving
+            <select name="problem_to_solve" required>
+              <option value="">Select one</option>
+              <option>Affordable / attainable housing</option>
+              <option>Faster construction delivery</option>
+              <option>Increase building capacity</option>
+              <option>Rental income / land utilization</option>
+              <option>Scalable housing systems</option>
+            </select>
+          </label>
+          <label>Sector focus
+            <select name="sector_focus" required>
+              <option value="">Select one</option>
+              <option>ADU / Backyard housing</option>
+              <option>Single-family / Cabin</option>
+              <option>Missing middle / Multi-family</option>
+              <option>Workforce / Community housing</option>
+              <option>Large-scale / Commercial projects</option>
+            </select>
+          </label>
+        </div>
+        <div className="contact-form__row contact-form__row--2">
+          <label>Scale of operation
+            <select name="project_scale" required>
+              <option value="">Select one</option>
+              <option>Single project</option>
+              <option>Small pipeline (2–10)</option>
+              <option>Regional pipeline (10–50)</option>
+              <option>Large-scale deployment (50+)</option>
+              <option>Exploring opportunities</option>
+            </select>
+          </label>
+          <label>Timeline
+            <select name="timeline" required>
+              <option value="">Select one</option>
+              <option>Immediate</option>
+              <option>3–6 months</option>
+              <option>6–12 months</option>
+              <option>Long-term exploration</option>
+            </select>
+          </label>
+        </div>
+        <div className="contact-form__row">
+          <label>Anything else you'd like to share?
+            <textarea name="additional_details" rows="5"
+              placeholder="Tell us more about your project, organization, goals, capabilities, or interest in ORCA." />
+          </label>
+        </div>
+      </div>
+
+      {status === 'error' && !Object.keys(fieldErrors).length && (
+        <p className="contact-form__error">Something went wrong. Please try again.</p>
+      )}
+
+      <div>
+        <button type="submit" className="contact-form__submit" disabled={status === 'submitting'}>
+          <span>{status === 'submitting' ? 'Submitting…' : 'Submit Application'}</span>
+          <span className="contact-form__submit-arrow">→</span>
+        </button>
+      </div>
+    </form>
+  );
+}
+
+function ContactSection() {
+  return (
+    <section className="contact-section" id="apply">
+      <div className="wrap">
+        <div className="section__head contact-section .section__head reveal">
+          <Eyebrow>Apply for Founding Access</Eyebrow>
+          <h2 className="h-section section__title">
+            Tell us about <em style={{ color: "var(--bone)", fontStyle: "normal" }}>your project.</em>
+          </h2>
+          <p className="section__lede">
+            We're onboarding founding builders, developers, and partners across BC and Alberta.
+            Fill out the form and we'll be in touch.
+          </p>
+        </div>
+        <div className="reveal">
+          <ContactForm />
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ── Footer ── */
 function Foot() {
   return (
@@ -2651,7 +2995,7 @@ function Foot() {
           <span>© 2026 ORCA KITS — Light-Gauge Steel, Flat-Packed.</span>
         </div>
         <div className="foot__links">
-          <a href={FORM_URL} target="_blank" rel="noopener noreferrer">Request Catalog</a>
+          <a href="#apply">Apply Now</a>
           <a href="#edge">Edge</a>
           <a href="#proof">Gallery</a>
           <a href="#process">Process</a>
@@ -2738,6 +3082,7 @@ function App() {
       <Proof density={tweaks.galleryDensity} />
       {tweaks.showProcess && <Process />}
       <FinalCTA />
+      <ContactSection />
       <Foot />
       <TweaksUI tweaks={tweaks} setTweak={setTweak} />
     </>
