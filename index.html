@@ -40,6 +40,10 @@
 
 * { box-sizing: border-box; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
+html {
+  overflow-x: hidden;
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -49,6 +53,8 @@ html, body {
   font-feature-settings: "ss01", "cv11";
   font-variant-ligatures: contextual;
   -webkit-tap-highlight-color: transparent;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 a { color: inherit; text-decoration: none; }
@@ -163,7 +169,7 @@ body::before {
   display: block;
   width: 150px;
   height: 48px;
-  background-image: url("project/assets/orca-logo-clean.png");
+  background-image: url("project/assets/orca-logo.webp");
   background-size: contain;
   background-position: left center;
   background-repeat: no-repeat;
@@ -410,7 +416,7 @@ body::before {
 }
 @media (min-width: 900px) {
   .how__flow {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 0;
     align-items: stretch;
   }
@@ -849,8 +855,8 @@ body::before {
   border-radius: 4px;
   overflow: hidden;
 }
-@media (min-width: 720px) { .edge__grid { grid-template-columns: 1fr 1fr; } }
-@media (min-width: 1100px) { .edge__grid { grid-template-columns: repeat(4, 1fr); } }
+@media (min-width: 720px) { .edge__grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } }
+@media (min-width: 1100px) { .edge__grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 
 .edge__cell {
   background: var(--ink-900);
@@ -992,11 +998,13 @@ body::before {
 .proof__row:last-child { margin-bottom: 0; }
 
 @media (min-width: 900px) {
-  .proof__row { grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin-bottom: 140px; }
+  .proof__row { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px; align-items: center; margin-bottom: 140px; }
   .proof__row--reverse .proof__copy { order: 2; }
   .proof__row--reverse .proof__media { order: 1; }
   .proof__row--full { grid-template-columns: 1fr; }
 }
+
+.proof__media, .proof__copy { min-width: 0; }
 
 .proof__media {
   position: relative;
@@ -1250,7 +1258,7 @@ body::before {
   display: block;
   width: 130px;
   height: 40px;
-  background-image: url("project/assets/orca-logo-clean.png");
+  background-image: url("project/assets/orca-logo.webp");
   background-size: contain;
   background-position: left center;
   background-repeat: no-repeat;
